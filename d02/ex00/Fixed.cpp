@@ -1,0 +1,2 @@
+Fixed::Fixed()
+Fixed::~Fixed()
