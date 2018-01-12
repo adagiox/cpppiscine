@@ -13,7 +13,7 @@ class Fixed
 	public:
 		Fixed();
 		~Fixed();
-		Fixed(Fixed const & src);
+		Fixed(Fixed const &src);
 		Fixed & operator=(Fixed const & rhs);
 };
 

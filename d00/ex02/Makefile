@@ -1,2 +1,2 @@
 all:
-	clang++ tests.cpp Account.class.hpp Account.class.cpp
+	clang++ tests.cpp Account.class.hpp Account.cpp
