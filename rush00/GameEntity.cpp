@@ -2,7 +2,7 @@
 
 GameEntity::GameEntity(char entityChar) : entityChar(entityChar), alive(true) 
 {
-	std::cout << "GameEntity constructor" << std::endl;
+	//std::cout << "GameEntity constructor" << std::endl;
 }
 GameEntity::GameEntity(const GameEntity &src) { this->entityChar = src.entityChar; }
 char GameEntity::getEntityChar() { return entityChar; }

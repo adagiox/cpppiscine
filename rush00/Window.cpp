@@ -6,8 +6,7 @@ Window::Window()
 }
 Window::~Window() 
 {
-	this->cleanup();
-	std::cout <<  "Window destroyed." << std::endl;
+	//std::cout <<  "Window destroyed." << std::endl;
 }
 
 Window::Window(const Window &src)
