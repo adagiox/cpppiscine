@@ -9,7 +9,7 @@ class Player : public GameEntity
 		
 
 	public:
-		Player(char entityChar);
+		Player();
 		~Player();
 		Player(const Player &src);
 		Player &operator=(const Player &rhs);

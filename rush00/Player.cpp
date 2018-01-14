@@ -1,12 +1,9 @@
 #include "Player.hpp"
 
-Player::Player(char entityChar) : GameEntity(entityChar) {}
+Player::Player() : GameEntity('>') {}
 Player::~Player() {}
 
-Player::Player(const Player &src) : GameEntity(src.entityChar)
-{
-	this->entityChar = src.entityChar;
-}
+Player::Player(const Player &src) : GameEntity(src.entityChar) {}
 
 Player &Player::operator=(const Player &rhs)
 {

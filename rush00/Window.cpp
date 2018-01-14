@@ -4,7 +4,10 @@ Window::Window()
 {
 	this->init();
 }
-Window::~Window() {}
+Window::~Window() 
+{
+	this->cleanup();
+}
 
 Window::Window(const Window &src)
 {

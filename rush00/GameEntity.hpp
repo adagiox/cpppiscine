@@ -1,6 +1,8 @@
 #ifndef GAMEENTITY_HPP
 #define GAMEENTITY_HPP
 
+#include <iostream>
+
 class GameEntity
 {
 	protected:
