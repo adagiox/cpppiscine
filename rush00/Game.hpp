@@ -10,10 +10,10 @@ class Game
 {
 	public:
 		int maxEnemies;
-		Window window;
+		Window *window;
 		//EntityManager entityManager;
 		Player player;
-		Enemy *enemies[];
+		Enemy *enemies;
 		Game();
 		~Game();
 		Game(const Game &src);

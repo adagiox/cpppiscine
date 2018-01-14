@@ -7,13 +7,11 @@
 
 class Window
 {
-	private:
+	public:
 		int windowWidth, windowHeight;
 		WINDOW *scr;
 		WINDOW *debug;
 		WINDOW *gameWin;
-
-	public:
 		Window();
 		~Window();
 		Window(const Window &src);

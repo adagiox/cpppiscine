@@ -7,6 +7,7 @@ Window::Window()
 Window::~Window() 
 {
 	this->cleanup();
+	std::cout <<  "Window destroyed." << std::endl;
 }
 
 Window::Window(const Window &src)
@@ -54,7 +55,7 @@ void Window::init()
 	mvwprintw(gameWin, 0, 0, "-----");
 	wrefresh(gameWin);
 	refresh();
-	usleep(5000000);
+	usleep(1000000);
 }
 
 void Window::cleanup()

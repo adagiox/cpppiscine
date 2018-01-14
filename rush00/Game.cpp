@@ -2,8 +2,13 @@
 
 Game::Game() : maxEnemies(20) 
 {
+	this->window = new Window();
+	this->enemies = new Enemy[this->maxEnemies];
+	// for (int i = 0; i < this->maxEnemies; i++)
+	// 	this->enemies[i] = new Enemy();
 	for (int i = 0; i < this->maxEnemies; i++)
-		this->enemies[i] = new Enemy();
+		this->enemies[i].talk(this->window->gameWin);
+	usleep(5000000);
 }
 Game::~Game() {}
 

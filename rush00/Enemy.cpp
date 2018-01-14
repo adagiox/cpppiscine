@@ -2,10 +2,16 @@
 
 Enemy::Enemy() : GameEntity('C'), isVisible(false) 
 {
-	std::cout << "Enemy constructor" << std::endl;
+	// wprintw(stdscr, "Enemy constructor\n");
+	// wrefresh(stdscr);
 }
 Enemy::~Enemy() {}
 // Enemy::Enemy(const Enemy &src) 
 // {
 // 	this->
 // }
+void Enemy::talk(WINDOW *win)
+{
+	wprintw(win, "This is an enemy.\n");
+	wrefresh(win);
+}
