@@ -26,6 +26,7 @@ void Window::setWindowHeight(int height) { this->windowHeight = height; }
 
 void Window::init()
 {
+	setlocale(LC_ALL, "");
 	initscr();
 	noecho();
 	curs_set(FALSE);
