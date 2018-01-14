@@ -1,10 +1,16 @@
 #include "Window.hpp"
 
-Window::Window() {}
+Window::Window() 
+{
+	this->init();
+}
 Window::~Window() {}
 
 Window::Window(const Window &src)
 {
+	this->scr = src.scr;
+	this->debug = src.debug;
+	this->gameWin = src.gameWin;
 	this->windowWidth = src.windowWidth;
 	this->windowHeight = src.windowHeight;
 }
@@ -37,7 +43,13 @@ void Window::init()
 	getmaxyx(stdscr, h, w);
 	setWindowWidth(w);
 	setWindowHeight(h);
-	printw("W: %i\tH: %i\n", this->windowWidth, this->windowHeight);
+	this->scr = stdscr;
+	this->debug = newwin(2, this->windowWidth, 0, 0);
+	this->gameWin = newwin(this->windowHeight - 2, this->windowWidth, 3, 0);
+	wprintw(debug, "W: %i\tH: %i\n", this->windowWidth, this->windowHeight);
+	wrefresh(debug);
+	mvwprintw(gameWin, 0, 0, "-----");
+	wrefresh(gameWin);
 	refresh();
 	usleep(5000000);
 }

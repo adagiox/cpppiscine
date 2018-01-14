@@ -1,10 +1,8 @@
 #include "Window.hpp"
-//#include ""
+#include "Player.hpp"
 
 int main()
 {
-	Window *w = new Window();
-	w->init();
-	w->cleanup();
+	Window w;
 	return 0;
 }

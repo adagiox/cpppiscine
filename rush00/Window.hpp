@@ -9,6 +9,9 @@ class Window
 {
 	private:
 		int windowWidth, windowHeight;
+		WINDOW *scr;
+		WINDOW *debug;
+		WINDOW *gameWin;
 
 	public:
 		Window();
