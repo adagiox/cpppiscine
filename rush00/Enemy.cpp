@@ -16,4 +16,30 @@ void Enemy::talk(WINDOW *win)
 	wrefresh(win);
 }
 
-void Enemy::setNumber(int num) { this->number = num; }
+void Enemy::setNumber(int num)
+{
+	this->number = num;
+	if (rand() % 2 == 0)
+	{
+		this->hp = 2;
+		this->setEntityChar('D');
+		if (rand() % 2 == 0)
+		{
+			this->hp = 3;
+			this->setEntityChar('E');
+		}
+	}
+	else
+		this->hp = 1;
+}
+
+bool Enemy::takeHit()
+{
+	this->hp--;
+	if (this->hp == 0)
+	{
+		this->isVisible = false;
+		return true;
+	}
+	return false;
+}

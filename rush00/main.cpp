@@ -5,6 +5,5 @@
 int main()
 {
 	Game g;
-	g.window->cleanup();
 	return 0;
 }

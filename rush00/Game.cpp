@@ -2,15 +2,14 @@
 
 Game::Game() : maxEnemies(20) 
 {
+	std::srand(std::time(0));
 	this->window = new Window();
 	this->enemies = new Enemy[this->maxEnemies];
 	for (int i = 0; i < this->maxEnemies; i++)
 		this->enemies[i].setNumber(i+1);
-	for (int i = 0; i < this->maxEnemies; i++)
-		this->enemies[i].talk(this->window->gameWin);
 	usleep(5000000);
 }
-Game::~Game() {}
+Game::~Game() { this->window->cleanup(); }
 
 Game::Game(const Game &src)
 {
@@ -34,5 +33,23 @@ Game &Game::operator=(const Game &rhs)
 
 void Game::spawnEnemy()
 {
-	
+	if (rand() % 2 == 0)
+	{
+		int spawnLoc = rand() % this->window->windowHeight;
+		spawnLoc = rand();
+	}
+}
+
+Enemy *Game::getNextEnemy()
+{
+	Enemy *next = NULL;
+	for (int i = 0; i < maxEnemies; i++)
+	{
+		if (this->enemies[i].isVisible == false)
+		{
+			next = &this->enemies[i];
+			return next;
+		}
+	}
+	return next;
 }

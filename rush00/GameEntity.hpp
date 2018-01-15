@@ -12,6 +12,7 @@ class GameEntity
 		GameEntity(char entityChar);
 		GameEntity(const GameEntity &src);
 		char getEntityChar();
+		void setEntityChar(char c);
 		void moveEntity(int y, int x);
 		void setPos(int y, int x);
 		void getPos(int *y, int *x);

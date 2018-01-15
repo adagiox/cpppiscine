@@ -24,3 +24,5 @@ void GameEntity::getPos(int *y, int *x)
 	*y = this->yPos;
 	*x = this->xPos;
 }
+
+void GameEntity::setEntityChar(char c) { this->entityChar = c; }

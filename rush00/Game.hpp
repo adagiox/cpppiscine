@@ -2,6 +2,8 @@
 #define GAME_HPP
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "Window.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
@@ -18,6 +20,7 @@ class Game
 		Game(const Game &src);
 		Game &operator=(const Game &rhs);
 		void spawnEnemy();
+		Enemy *getNextEnemy();
 };
 
 #endif

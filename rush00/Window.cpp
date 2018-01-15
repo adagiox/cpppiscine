@@ -33,6 +33,12 @@ int Window::getWindowHeight() { return windowHeight; }
 void Window::setWindowWidth(int width) { this->windowWidth = width; }
 void Window::setWindowHeight(int height) { this->windowHeight = height; }
 
+void Window::printBar(WINDOW *win)
+{
+	for (int col = 0; col < this->windowWidth; col++)
+		wprintw(win, "-");
+}
+
 void Window::init()
 {
 	setlocale(LC_ALL, "");
@@ -50,9 +56,8 @@ void Window::init()
 	this->debug = newwin(2, this->windowWidth, 0, 0);
 	this->gameWin = newwin(this->windowHeight - 2, this->windowWidth, 3, 0);
 	wprintw(debug, "W: %i\tH: %i\n", this->windowWidth, this->windowHeight);
+	printBar(debug);
 	wrefresh(debug);
-	mvwprintw(gameWin, 0, 0, "-----");
-	wrefresh(gameWin);
 	refresh();
 	usleep(1000000);
 }
