@@ -23,6 +23,8 @@ class Window
 		void setWindowWidth(int width);
 		void setWindowHeight(int height);
 		void printHorizBar(WINDOW *win, int row);
+		void refreshWin();
+		void printDebug(const char *str);
 };
 
 #endif

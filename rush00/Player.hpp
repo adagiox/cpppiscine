@@ -5,9 +5,6 @@
 
 class Player : public GameEntity
 {
-	private:
-		
-
 	public:
 		Player();
 		~Player();

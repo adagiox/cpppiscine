@@ -19,5 +19,12 @@ int main()
 {
 	signal(SIGINT, sig_handler);
 	Game g;
+	while (1)
+	{
+		g.getInput();
+		g.processEvents();
+		g.refreshScreen();
+		usleep(16666);
+	}
 	return 0;
 }

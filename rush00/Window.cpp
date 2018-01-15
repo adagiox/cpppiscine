@@ -56,12 +56,13 @@ void Window::init()
 	this->scr = stdscr;
 	this->debug = newwin(2, this->windowWidth, 0, 0);
 	this->gameWin = newwin(this->windowHeight - 2, this->windowWidth, 3, 0);
+	keypad(gameWin, TRUE);
+	nodelay(gameWin, TRUE);
 	printHorizBar(debug, 1);
 	mvwprintw(debug, 0, this->getWindowWidth()/2 + this->getWindowWidth()/3, 
 			"W: %i  H: %i", this->windowWidth, this->windowHeight);
 	wrefresh(debug);
 	refresh();
-	usleep(500000);
 }
 
 void Window::cleanup()
@@ -69,4 +70,16 @@ void Window::cleanup()
 	clear();
 	refresh();
 	endwin();
+}
+
+void Window::refreshWin()
+{
+	wrefresh(this->scr);
+	wrefresh(this->debug);
+	wrefresh(this->gameWin);
+}
+
+void Window::printDebug(const char *str)
+{
+	mvwprintw(this->debug, 0, 0, str);
 }

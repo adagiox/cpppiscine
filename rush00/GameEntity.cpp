@@ -10,7 +10,7 @@ char GameEntity::getEntityChar() { return entityChar; }
 void GameEntity::moveEntity(int y, int x)
 {
 	y = this->yPos;
-	x = this->xPos;
+	x = this->xPos;	
 }
 
 void GameEntity::setPos(int y, int x)
