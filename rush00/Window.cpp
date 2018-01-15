@@ -33,10 +33,10 @@ int Window::getWindowHeight() { return windowHeight; }
 void Window::setWindowWidth(int width) { this->windowWidth = width; }
 void Window::setWindowHeight(int height) { this->windowHeight = height; }
 
-void Window::printBar(WINDOW *win)
+void Window::printHorizBar(WINDOW *win, int row)
 {
 	for (int col = 0; col < this->windowWidth; col++)
-		wprintw(win, "-");
+		mvwprintw(win, row, col, "-");
 }
 
 void Window::init()
@@ -44,6 +44,7 @@ void Window::init()
 	setlocale(LC_ALL, "");
 	initscr();
 	noecho();
+	cbreak();
 	curs_set(FALSE);
 	keypad(stdscr, TRUE);
 	clear();
@@ -55,11 +56,12 @@ void Window::init()
 	this->scr = stdscr;
 	this->debug = newwin(2, this->windowWidth, 0, 0);
 	this->gameWin = newwin(this->windowHeight - 2, this->windowWidth, 3, 0);
-	wprintw(debug, "W: %i\tH: %i\n", this->windowWidth, this->windowHeight);
-	printBar(debug);
+	printHorizBar(debug, 1);
+	mvwprintw(debug, 0, this->getWindowWidth()/2 + this->getWindowWidth()/3, 
+			"W: %i  H: %i", this->windowWidth, this->windowHeight);
 	wrefresh(debug);
 	refresh();
-	usleep(1000000);
+	usleep(500000);
 }
 
 void Window::cleanup()

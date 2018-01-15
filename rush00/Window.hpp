@@ -22,7 +22,7 @@ class Window
 		int getWindowHeight();
 		void setWindowWidth(int width);
 		void setWindowHeight(int height);
-		void printBar(WINDOW *win);
+		void printHorizBar(WINDOW *win, int row);
 };
 
 #endif

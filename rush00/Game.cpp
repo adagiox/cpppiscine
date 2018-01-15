@@ -7,7 +7,8 @@ Game::Game() : maxEnemies(20)
 	this->enemies = new Enemy[this->maxEnemies];
 	for (int i = 0; i < this->maxEnemies; i++)
 		this->enemies[i].setNumber(i+1);
-	usleep(5000000);
+	
+	usleep(500000);
 }
 Game::~Game() { this->window->cleanup(); }
 
