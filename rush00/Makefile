@@ -1,2 +1,2 @@
 all:
-	clang++ -Wall -Werror -Wextra -o terminator *.cpp -lncurses
+	clang++ -Wall -Werror -Wextra -o ft_retro *.cpp -lncurses
